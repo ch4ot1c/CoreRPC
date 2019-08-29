@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.1
 
 import PackageDescription
 
@@ -8,11 +8,10 @@ let package = Package(
         .library(name: "CoreRPC", targets: ["CoreRPC"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/mxcl/PromiseKit", from: "6.8.4"),
-        .package(url: "https://github.com/PromiseKit/Foundation", from: "3.3.2")
+        .package(url: "https://github.com/mxcl/PromiseKit", .branch("v7")),
     ],
     targets: [
-        .target(name: "CoreRPC", dependencies: ["PromiseKit", "PMKFoundation"]),
+        .target(name: "CoreRPC", dependencies: ["PromiseKit"]),
         .testTarget(name: "CoreRPCTests", dependencies: ["CoreRPC"]),
     ]
 )
